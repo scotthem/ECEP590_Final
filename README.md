@@ -45,3 +45,7 @@ The following milestones will be used to report progress on the project, those n
 
 ## References
 T.B.D.
+
+## Status Update (3/17/19)
+
+Well, didn't really get too far after spending 2+ days trying to get the AWS stuff working. I have some skeleton code up together and started working on some of the battery process. However ran into some issues with makefiles. Need to go away and do some research on these.

@@ -21,8 +21,8 @@ class UserInterface : public Process {
     void init() {}
     void start() {}
 
-    void show_battery();
-    void show_robot();
+    void show_battery(int x, int y, Battery::battery_status_type status, double charge);
+    void show_robot(int x, int y, std::string state);
 
     //! Update the user interface by (a) reading keyboard input and (b) writing to the screen
     void update();
@@ -31,6 +31,10 @@ class UserInterface : public Process {
     private:
     Battery& _battery;
     Robot& _robot;
+    std::string _stby = "Standby";
+    std::string _run = "Running";
+    std::string _low_batt = "Low Battery";
+    std::string _charge = "Charging";
 };
 
 #endif

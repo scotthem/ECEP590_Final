@@ -4,6 +4,7 @@
 #define LOW_CHARGE 20
 #define FULL_CHARGE 100
 
+#include <iostream>
 #include "elma/elma.h"
 
 using namespace elma;
@@ -12,7 +13,7 @@ using namespace elma;
 //! Models the charge and discharge of a battery when used by the Robot class
 class Battery : public Process {
     public:
-    
+
     //! Constructor that takes a name for the process
     Battery(std::string name) : Process(name) {}
 
@@ -51,6 +52,7 @@ class Battery : public Process {
             if(_charge == FULL_CHARGE) {
                 _status = RUNNING;
                 emit(Event("battery full"));
+                std::cout << "battery full" << std::endl;
             } else {
                 _charge += 1;
             }
@@ -60,6 +62,7 @@ class Battery : public Process {
             if(_charge == LOW_CHARGE && _status == RUNNING) {
                 _status = LOW_BATTERY;
                 emit(Event("battery low"));
+                std::cout << "battery low" << std::endl;
             }
         }
     }

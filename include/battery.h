@@ -56,7 +56,7 @@ class Battery : public Process {
             } else {
                 _charge += 1;
             }
-        } else {
+        } else if (_status == RUNNING) {
             _charge -= 1;
 
             if(_charge == LOW_CHARGE && _status == RUNNING) {

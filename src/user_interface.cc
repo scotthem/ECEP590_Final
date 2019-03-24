@@ -60,12 +60,16 @@ void UserInterface::update() {
         case 'f':
             emit(Event("found recharge station"));  // Hidden command for testing (found recharge)
             break;
+        case 'q':
+            std::cout << "halting\n";
+            halt();
+            break;
     }
 
     clear();
     show_battery(1, 1, _battery.status(), _battery.charge());
     show_robot(3, 1, _robot.current().name());
-    mvprintw(5,1,"start robot(s)");
+    mvprintw(5,1,"start robot(s), quit(q)");
 
 
     usleep(9999);

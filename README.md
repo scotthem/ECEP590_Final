@@ -1,14 +1,93 @@
 # Johnny Five
 ## Introduction
+---
 This repo forms the submittal for the final project of ECEP 590 - Software Engineering for Embedded applications offered as part of the Professional Masters Program in Electrical Engineering at the University of Washington.
 
 ## Project Goals
+---
 This project will, using the robot state machine from the [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 "ECEP520 Week 8"), create a more realistic simulation of a security patrol robot.
 
 This will be done using the [ELMA](http://klavinslab.org/elma/ "Elma Main Page") event loop and process manager that was developed during the ECEP 590 Winter class at the University of Washington and the code produced for the [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 "ECEP520 Week 8").
 
 During this project I would like expand on the robot state machine adding more realism to the system.
 
+## Installation
+---
+```bash
+    git clone https://github.com/scotthem/ECEP590_Final.git
+    cd ECEP590_Final
+    docker run -v $PWD:/source -it klavins/elma:latest bash
+    make
+    make docs
+```
+
+## Execution
+---
+To run the robot, type
+```bash
+    bin/robot
+```
+
+The robot is autonomous and will run without user interaction. However, should you wish to you can use the following keyboard commands to force state changes:
+
+- **s**: Start
+- **i**: Intruder Detected
+- **p**: Proximity Warning
+- **f**: Found Recharge StationS
+- **r**: Reset
+- **q**: Quit
+
+Note that only Start (**s**) and Quit (**q**) are displayed on the user interface.
+
+## Testing
+---
+To run tests, do
+```bash
+    bin/test
+```
+Note that during testing simulated time is used.
+
+## Architecture
+---
+The aim of this project was to implement the state machine shown in the following diagram:
+
+<img src="images/robot.png" width="620"></image>
+
+The state machine and states were created inheriting for the ELMA State and StateMahcine classes. The state machine is driven by events. In order to provide autonomy I created a Battery class that inherits from the ELMA Process class simulated a battery to emit the events related to the battery (low battery, charged etc...). I then created a user interface where I was able to force events using the keyboard. Finally, after running into some issues regarding the multiple use of the Manager run() method during testing, at the recommendation of Prof. Klavins, implemented a RobotTester class which was another ELMA Process. This RobotTester class provides all of the stimulus not provided by the Battery.
+
+## Results
+---
+This project did not get off to a particularly good start. Thanks to Amazon Web Services Lambda (and not using JSON in an intuitive way) the start of the project was substantially delayed. The lack of my knowledge of make files proved to be my second stumbling block, taking the better part of two days to get a skeleton code compiled successfully.
+
+However, once these hurdles were overcome I made steady progress until I ran into the limitations of my knowledge of ELMA. Ultimately I was able to get the robot to behave autonomously (see below for example from the UI).
+
+<img src="images/UI.png" width="240"></image>
+
+I had hoped to achieve much more, especially as the week went on and I felt more and more comfortable with ELMA and C++ in general. I would have like to completed the RobotServer and associated code, but given the time pressure this was simply not possible.
+
+## Acknowledgements
+---
+Thanks to Professor E Klavins (University of Washington) and the ECE 520 Teaching Assistants for patiently answering this noobs questions.
+
+Also to Mike O'Dell for the moral support and mutual commiseration when the homework took way longer than expected!
+
+## References
+---
+Primary references were the ELMA and related pages located at:
+
+http://klavinslab.org/elma/ and 
+http://klavinslab.org/elma_project/
+
+as well as the online C++ references at:
+
+https://en.cppreference.com/w/ and
+http://www.cplusplus.com/
+
+# Previous Materials
+
+Below are archives of the project readme information (please forgive the over enthusiasm!)
+
+---
 I will create a simulation mode that implements a "simulated time" in order to speed up simulations and testing.
 
 I will model the propulsion (motor) and power systems. This will including  changing in current requirements for different activities (evade , make noise should require more power for example) and a charging ciruit that mirrors a real battery charging cycle.
@@ -43,9 +122,9 @@ The following milestones will be used to report progress on the project, those n
 
 [ ] **Huge Stretch** Implement GUI for the user control and status. (Lets face it I have no idea where to start with this so probably won't happen. But hey, a guy has to have aspirations)
 
-## References
-T.B.D.
 
 ## Status Update (3/17/19)
 
 Well, didn't really get too far after spending 2+ days trying to get the AWS stuff working. I have some skeleton code up together and started working on some of the battery process. However ran into some issues with makefiles. Need to go away and do some research on these.
+
+

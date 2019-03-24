@@ -8,7 +8,7 @@ UserInterface::UserInterface(Battery& b, Robot& r) : Process("user input"), _bat
 }
 
 void UserInterface::show_battery(int x, int y, Battery::battery_status_type status, double charge) {
-    mvprintw(x,y, "Battery Level  : %.2f", charge);
+    mvprintw(x,y, "Battery Level  : %.2f %%", charge);
                    
     if(status == Battery::STANDBY) {
         mvprintw(x+1,y,"Battery Status : Standby");

@@ -37,7 +37,7 @@ NON_MAIN_OBJECTS     := $(filter-out ./build/main.o,$(OBJECTS))
 DGENCONFIG  := docs.config
 
 #Defauilt Make
-all: directories $(TARGETDIR)/$(TARGET) bin/test
+all: directories $(TARGETDIR)/$(TARGET) bin/test homework
 
 docs: docs/index.html
 
@@ -53,14 +53,19 @@ directories:
 	@mkdir -p $(TARGETDIR)
 	@mkdir -p $(BUILDDIR)
 
+homework:
+	cd server && $(MAKE)
+
 #Clean only Objects
 clean:
 	@$(RM) -rf $(BUILDDIR)/*.o *.o bin/*
+	cd server && $(MAKE) clean
 
 #Full Clean, Objects and Binaries
 spotless: clean
 	@$(RM) -rf $(TARGETDIR)/$(TARGET) *.db
 	@$(RM) -rf build bin html latex
+	cd server && $(MAKE) spotless
 
 #Unit Tester
 bin/test: $(NON_MAIN_OBJECTS) $(HEADERS) ./src/unit_test.cc ./src/test_main.cpp

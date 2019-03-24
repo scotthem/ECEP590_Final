@@ -22,7 +22,7 @@ class Battery : public Process {
 
     //! Initialization method. Overrides the Process method
     //! to initialize the battery. Sets initial status and 
-    //! charge as well as setting up the event watches.
+    //! charge, as well as setting up the event watches.
     void init() {
         _status = STANDBY;
         _charge = FULL_CHARGE;

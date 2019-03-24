@@ -11,6 +11,7 @@ using namespace elma;
 //! battery class.
 class RobotTester : public Process {
     public:
+    
     //! Constructor that creates a named RobotTester object
     //! /param b A reference to a battery object
     //! /param r A reference to a robot object

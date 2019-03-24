@@ -9,7 +9,12 @@ using namespace elma;
 //! A robot class, that inherits from StateMachine
 class Robot : public StateMachine {
 public:
+    //! Constructor that creates a named RobotTester object
+    //! Contains state declaration and transitions
     Robot(std::string name);
+
+    //! Constructor that creates an unnamed named RobotTester object
+    //! Contains state declaration and transitions
     Robot();
 
 private:

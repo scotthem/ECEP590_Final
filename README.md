@@ -55,6 +55,8 @@ The aim of this project was to implement the state machine shown in the followin
 
 The state machine and states were created inheriting for the ELMA State and StateMahcine classes. The state machine is driven by events. In order to provide autonomy I created a Battery class that inherits from the ELMA Process class simulated a battery to emit the events related to the battery (low battery, charged etc...). I then created a user interface where I was able to force events using the keyboard. Finally, after running into some issues regarding the multiple use of the Manager run() method during testing, at the recommendation of Prof. Klavins, implemented a RobotTester class which was another ELMA Process. This RobotTester class provides all of the stimulus not provided by the Battery.
 
+I attempted to implement a server and client that would save a log of important events, however time proved my undoing and it is uploaded half finished and untested.
+
 ## Results
 ---
 This project did not get off to a particularly good start. Thanks to Amazon Web Services Lambda (and not using JSON in an intuitive way) the start of the project was substantially delayed. The lack of my knowledge of make files proved to be my second stumbling block, taking the better part of two days to get a skeleton code compiled successfully.

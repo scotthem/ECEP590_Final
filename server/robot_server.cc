@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <ctime>
 
 #include "httplib/httplib.h"
 #include "json/json.h"
@@ -25,7 +27,18 @@ int main(void) {
 
         std::cout << "Got new save request " << request.dump() << std::endl;  
 
-        // TODO: Insert routine to write to file here
+        std::fstream fs;
+        time_t t = std::time(0);
+        long int now = static_cast<long int> (t);
+
+        fs.open ("log.txt", std::ios_base::app);
+        
+        if (fs.is_open()) {
+            fs << now << " " << request.dump() << std::endl;
+            fs.close();
+        } else {
+            throw std::runtime_error("Cannot open file for writing");
+        }
 
         result["result"] = "ok";
         result["id"] = next_id++;

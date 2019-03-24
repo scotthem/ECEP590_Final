@@ -22,8 +22,10 @@ private:
     RobotState Recharge = RobotState("Recharge");
     RobotState Wander = RobotState("Wander");
     RobotState FindRechargeStation = RobotState("Find Recharge Station");
-    RobotState Evade = RobotState("Evade");
-    RobotState MakeNoise = RobotState("Make Noise");
+    // RobotState Evade = RobotState("Evade");
+    RobotPostState Evade = RobotPostState("Evade", "Proximity Alert");
+    // RobotState MakeNoise = RobotState("Make Noise");
+    RobotPostState MakeNoise = RobotPostState("Make Noise", "Intruder Detected");
 };
 
 #endif

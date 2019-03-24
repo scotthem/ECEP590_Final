@@ -85,59 +85,143 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;# Johnny Five</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;## Introduction</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;This repo forms the submittal for the final project of ECEP 590 - Software Engineering for Embedded applications offered as part of the Professional Masters Program in Electrical Engineering at the University of Washington.</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;## Project Goals</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;This project will, using the robot state machine from the [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 &quot;ECEP520 Week 8&quot;), create a more realistic simulation of a security patrol robot.</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;This will be done using the [ELMA](http://klavinslab.org/elma/ &quot;Elma Main Page&quot;) event loop and process manager that was developed during the ECEP 590 Winter class at the University of Washington and the code produced for the [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 &quot;ECEP520 Week 8&quot;).</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;---</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;This repo forms the submittal for the final project of ECEP 590 - Software Engineering for Embedded applications offered as part of the Professional Masters Program in Electrical Engineering at the University of Washington.</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;## Project Goals</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;---</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;This project will, using the robot state machine from the [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 &quot;ECEP520 Week 8&quot;), create a more realistic simulation of a security patrol robot.</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;During this project I would like expand on the robot state machine adding more realism to the system.</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;This will be done using the [ELMA](http://klavinslab.org/elma/ &quot;Elma Main Page&quot;) event loop and process manager that was developed during the ECEP 590 Winter class at the University of Washington and the code produced for the [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 &quot;ECEP520 Week 8&quot;).</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;I will create a simulation mode that implements a &quot;simulated time&quot; in order to speed up simulations and testing.</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;During this project I would like expand on the robot state machine adding more realism to the system.</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;I will model the propulsion (motor) and power systems. This will including  changing in current requirements for different activities (evade , make noise should require more power for example) and a charging ciruit that mirrors a real battery charging cycle.</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;I will add a monitoring server and onboard client that will broadcast the status and location of the robot.</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;I will simulate the motion of the robot around its patrol patter and implement a method to change patrol paterns to random, to fixed patrol patterns as defined by the user.</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;A stretch goal for the maping, patrol routes and power systems implementation of this would be to add the effects of terain, and the addition of obstacles and intruders that would be detected when within a given distance. However, this may be beyond my abilities in the time allotted.</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;## Milestones</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;## Installation</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;---</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;```bash</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    git clone https://github.com/scotthem/ECEP590_Final.git</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    cd ECEP590_Final</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    docker run -v $PWD:/source -it klavins/elma:latest bash</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    make</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    make docs</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;```</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;The following milestones will be used to report progress on the project, those not marked &quot;**Stretch**&quot; are considered to be the &quot;complete&quot; project.</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;[ ] Create directory structure, docker container for the project, complile using robot state machine example from [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 &quot;ECEP520 Week 8&quot;).</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;[ ] Identify a suitable method for implementing a &quot;simulated time&quot; in order to reduce the overall simulation time during testing.</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;[ ] Simulate the on power systems including realistic battery loading based upon the activity and a charge cycle with a typical recharge curve.</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;## Execution</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;---</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;To run the robot, type</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;```bash</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    server/bin/server &amp;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    bin/robot</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;```</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;[ ] Allow the patrol robot to report position and status to a remote server at regular intervals as well as during events of interest.</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;The robot is autonomous and will run without user interaction. However, should you wish to you can use the following keyboard commands to force state changes:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;[ ] Create set patrol patterns that can be simulated.</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;[ ] Create a suitable document set for the code.</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;[ ] **Stretch** Extend robot and patrol code to react automatically to simulated obstacles and intruders.</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;[ ] **Stretch** Extend the patrol patterns and power systems to include different terrain.</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;[ ] **Stretch** Create a simulated user control panel that would allow, for instance, deactivation of alarms, cancelling of patrols, force battery charging, chage patrol route, etc...</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;[ ] **Huge Stretch** Implement GUI for the user control and status. (Lets face it I have no idea where to start with this so probably won&#39;t happen. But hey, a guy has to have aspirations)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;## References</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;T.B.D.</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;## Status Update (3/17/19)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;- **s**: Start</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;- **i**: Intruder Detected</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;- **p**: Proximity Warning</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;- **f**: Found Recharge StationS</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;- **r**: Reset</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;- **q**: Quit</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;Note that only Start (**s**) and Quit (**q**) are displayed on the user interface.</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;## Testing</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;---</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;To run tests, do</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;```bash</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    bin/test</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;```</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;Note that during testing simulated time is used.</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;Well, didn&#39;t really get too far after spending 2+ days trying to get the AWS stuff working. I have some skeleton code up together and started working on some of the battery process. However ran into some issues with makefiles. Need to go away and do some research on these.</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;## Architecture</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;---</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;The aim of this project was to implement the state machine shown in the following diagram:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;&lt;img src=&quot;images/robot.png&quot; width=&quot;620&quot;&gt;&lt;/image&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;The state machine and states were created inheriting for the ELMA State and StateMahcine classes. The state machine is driven by events. In order to provide autonomy I created a Battery class that inherits from the ELMA Process class simulated a battery to emit the events related to the battery (low battery, charged etc...). I then created a user interface where I was able to force events using the keyboard. </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;After running into some issues regarding the multiple use of the Manager run() method during testing, at the recommendation of Prof. Klavins, implemented a RobotTester class which was another ELMA Process. This RobotTester class provides all of the stimulus not provided by the Battery.</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;Finally, I added a new State class, RobotPostState, that during the entry method wrote a specified message to a server. The server in turn saves this message along with a timestamp in a log.txt file.</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;## Results</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;---</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;This project did not get off to a particularly good start. Thanks to Amazon Web Services Lambda (and not using JSON in an intuitive way) the start of the project was substantially delayed. The lack of my knowledge of make files proved to be my second stumbling block, taking the better part of two days to get a skeleton code compiled successfully.</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;However, once these hurdles were overcome I made steady progress until I ran into the limitations of my knowledge of ELMA. Ultimately I was able to get the robot to behave autonomously (see below for example from the UI).</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;&lt;img src=&quot;images/UI.png&quot; width=&quot;240&quot;&gt;&lt;/image&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;I was also able (at the last minute) able to implement a server/client that logged interesting events. I had hoped to achieve much more, especially as the week went on and I felt more and more comfortable with ELMA and C++ in general.</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;## Acknowledgements</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;---</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;Thanks to Professor E Klavins (University of Washington) and the ECE 520 Teaching Assistants for patiently answering this noobs questions.</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;Also to Mike O&#39;Dell for the moral support and mutual commiseration when the homework took way longer than expected!</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;## References</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;---</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;Primary references were the ELMA and related pages located at:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;http://klavinslab.org/elma/ and </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;http://klavinslab.org/elma_project/</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;as well as the online C++ references at:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;https://en.cppreference.com/w/ and</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;http://www.cplusplus.com/</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;# Previous Materials</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;Below are archives of the project readme information (please forgive the over enthusiasm!)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;---</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;I will create a simulation mode that implements a &quot;simulated time&quot; in order to speed up simulations and testing.</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;I will model the propulsion (motor) and power systems. This will including  changing in current requirements for different activities (evade , make noise should require more power for example) and a charging ciruit that mirrors a real battery charging cycle.</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;I will add a monitoring server and onboard client that will broadcast the status and location of the robot.</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;I will simulate the motion of the robot around its patrol patter and implement a method to change patrol paterns to random, to fixed patrol patterns as defined by the user.</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;A stretch goal for the maping, patrol routes and power systems implementation of this would be to add the effects of terain, and the addition of obstacles and intruders that would be detected when within a given distance. However, this may be beyond my abilities in the time allotted.</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;## Milestones</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;The following milestones will be used to report progress on the project, those not marked &quot;**Stretch**&quot; are considered to be the &quot;complete&quot; project.</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;[ ] Create directory structure, docker container for the project, complile using robot state machine example from [week 8 homework](https://github.com/klavins/ECEP520/tree/master/week_7 &quot;ECEP520 Week 8&quot;).</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;[ ] Identify a suitable method for implementing a &quot;simulated time&quot; in order to reduce the overall simulation time during testing.</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;[ ] Simulate the on power systems including realistic battery loading based upon the activity and a charge cycle with a typical recharge curve.</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;[ ] Allow the patrol robot to report position and status to a remote server at regular intervals as well as during events of interest.</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;[ ] Create set patrol patterns that can be simulated.</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;[ ] Create a suitable document set for the code.</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;[ ] **Stretch** Extend robot and patrol code to react automatically to simulated obstacles and intruders.</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;[ ] **Stretch** Extend the patrol patterns and power systems to include different terrain.</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;[ ] **Stretch** Create a simulated user control panel that would allow, for instance, deactivation of alarms, cancelling of patrols, force battery charging, chage patrol route, etc...</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;[ ] **Huge Stretch** Implement GUI for the user control and status. (Lets face it I have no idea where to start with this so probably won&#39;t happen. But hey, a guy has to have aspirations)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;## Status Update (3/17/19)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;Well, didn&#39;t really get too far after spending 2+ days trying to get the AWS stuff working. I have some skeleton code up together and started working on some of the battery process. However ran into some issues with makefiles. Need to go away and do some research on these.</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 24 2019 03:28:35 for Johnny Five by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 24 2019 05:43:11 for Johnny Five by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

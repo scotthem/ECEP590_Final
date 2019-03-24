@@ -106,18 +106,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classRobotState.html">RobotState</a> Recharge = <a class="code" href="classRobotState.html">RobotState</a>(<span class="stringliteral">&quot;Recharge&quot;</span>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classRobotState.html">RobotState</a> Wander = <a class="code" href="classRobotState.html">RobotState</a>(<span class="stringliteral">&quot;Wander&quot;</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classRobotState.html">RobotState</a> FindRechargeStation = <a class="code" href="classRobotState.html">RobotState</a>(<span class="stringliteral">&quot;Find Recharge Station&quot;</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classRobotState.html">RobotState</a> Evade = <a class="code" href="classRobotState.html">RobotState</a>(<span class="stringliteral">&quot;Evade&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classRobotState.html">RobotState</a> MakeNoise = <a class="code" href="classRobotState.html">RobotState</a>(<span class="stringliteral">&quot;Make Noise&quot;</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// RobotState Evade = RobotState(&quot;Evade&quot;);</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classRobotPostState.html">RobotPostState</a> Evade = <a class="code" href="classRobotPostState.html">RobotPostState</a>(<span class="stringliteral">&quot;Evade&quot;</span>, <span class="stringliteral">&quot;Proximity Alert&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// RobotState MakeNoise = RobotState(&quot;Make Noise&quot;);</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classRobotPostState.html">RobotPostState</a> MakeNoise = <a class="code" href="classRobotPostState.html">RobotPostState</a>(<span class="stringliteral">&quot;Make Noise&quot;</span>, <span class="stringliteral">&quot;Intruder Detected&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classRobot_html"><div class="ttname"><a href="classRobot.html">Robot</a></div><div class="ttdoc">A robot class, that inherits from StateMachine. </div><div class="ttdef"><b>Definition:</b> <a href="robot_8h_source.html#l00010">robot.h:10</a></div></div>
-<div class="ttc" id="classRobotState_html"><div class="ttname"><a href="classRobotState.html">RobotState</a></div><div class="ttdoc">A robot state, that inherits from State and used in the Robot class. </div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00009">robot_state.h:9</a></div></div>
+<div class="ttc" id="classRobotState_html"><div class="ttname"><a href="classRobotState.html">RobotState</a></div><div class="ttdoc">A robot state, that inherits from State and used in the Robot class. </div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00011">robot_state.h:11</a></div></div>
+<div class="ttc" id="classRobotPostState_html"><div class="ttname"><a href="classRobotPostState.html">RobotPostState</a></div><div class="ttdef"><b>Definition:</b> <a href="robot__state_8h_source.html#l00033">robot_state.h:33</a></div></div>
 <div class="ttc" id="namespaceelma_html"><div class="ttname"><a href="namespaceelma.html">elma</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 24 2019 03:28:35 for Johnny Five by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 24 2019 05:43:10 for Johnny Five by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

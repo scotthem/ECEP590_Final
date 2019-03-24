@@ -25,6 +25,7 @@ During this project I would like expand on the robot state machine adding more r
 ---
 To run the robot, type
 ```bash
+    server/bin/server &
     bin/robot
 ```
 
@@ -53,9 +54,11 @@ The aim of this project was to implement the state machine shown in the followin
 
 <img src="images/robot.png" width="620"></image>
 
-The state machine and states were created inheriting for the ELMA State and StateMahcine classes. The state machine is driven by events. In order to provide autonomy I created a Battery class that inherits from the ELMA Process class simulated a battery to emit the events related to the battery (low battery, charged etc...). I then created a user interface where I was able to force events using the keyboard. Finally, after running into some issues regarding the multiple use of the Manager run() method during testing, at the recommendation of Prof. Klavins, implemented a RobotTester class which was another ELMA Process. This RobotTester class provides all of the stimulus not provided by the Battery.
+The state machine and states were created inheriting for the ELMA State and StateMahcine classes. The state machine is driven by events. In order to provide autonomy I created a Battery class that inherits from the ELMA Process class simulated a battery to emit the events related to the battery (low battery, charged etc...). I then created a user interface where I was able to force events using the keyboard. 
 
-I attempted to implement a server and client that would save a log of important events, however time proved my undoing and it is uploaded half finished and untested.
+After running into some issues regarding the multiple use of the Manager run() method during testing, at the recommendation of Prof. Klavins, implemented a RobotTester class which was another ELMA Process. This RobotTester class provides all of the stimulus not provided by the Battery.
+
+Finally, I added a new State class, RobotPostState, that during the entry method wrote a specified message to a server. The server in turn saves this message along with a timestamp in a log.txt file.
 
 ## Results
 ---
@@ -65,7 +68,7 @@ However, once these hurdles were overcome I made steady progress until I ran int
 
 <img src="images/UI.png" width="240"></image>
 
-I had hoped to achieve much more, especially as the week went on and I felt more and more comfortable with ELMA and C++ in general. I would have like to completed the RobotServer and associated code, but given the time pressure this was simply not possible.
+I was also able (at the last minute) able to implement a server/client that logged interesting events. I had hoped to achieve much more, especially as the week went on and I felt more and more comfortable with ELMA and C++ in general.
 
 ## Acknowledgements
 ---

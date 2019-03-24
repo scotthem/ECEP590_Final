@@ -149,16 +149,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">case</span> <span class="charliteral">&#39;f&#39;</span>:</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            emit(Event(<span class="stringliteral">&quot;found recharge station&quot;</span>));  <span class="comment">// Hidden command for testing (found recharge)</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    clear();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classUserInterface.html#ae12398af867ca1707dfe99dec3ad7411">show_battery</a>(1, 1, _battery.<a class="code" href="classBattery.html#a1dfa1e3a7ee6ef497f8b9998ce74fda4">status</a>(), _battery.<a class="code" href="classBattery.html#aa5078e11396fb6118c7b93a41b213206">charge</a>());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classUserInterface.html#a1e9abe80d35963d249e0d58ce0a628cd">show_robot</a>(3, 1, _robot.current().name());</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    mvprintw(5,1,<span class="stringliteral">&quot;start robot(s)&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    usleep(9999);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;halting\n&quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            halt();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    clear();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classUserInterface.html#ae12398af867ca1707dfe99dec3ad7411">show_battery</a>(1, 1, _battery.<a class="code" href="classBattery.html#a1dfa1e3a7ee6ef497f8b9998ce74fda4">status</a>(), _battery.<a class="code" href="classBattery.html#aa5078e11396fb6118c7b93a41b213206">charge</a>());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classUserInterface.html#a1e9abe80d35963d249e0d58ce0a628cd">show_robot</a>(3, 1, _robot.current().name());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    mvprintw(5,1,<span class="stringliteral">&quot;start robot(s), quit(q)&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    usleep(9999);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="ttc" id="classRobot_html"><div class="ttname"><a href="classRobot.html">Robot</a></div><div class="ttdoc">A robot class, that inherits from StateMachine. </div><div class="ttdef"><b>Definition:</b> <a href="robot_8h_source.html#l00010">robot.h:10</a></div></div>
 <div class="ttc" id="classBattery_html_a965da8d01bdb369c47f10d70712f7469"><div class="ttname"><a href="classBattery.html#a965da8d01bdb369c47f10d70712f7469">Battery::battery_status_type</a></div><div class="ttdeci">battery_status_type</div><div class="ttdef"><b>Definition:</b> <a href="battery_8h_source.html#l00075">battery.h:75</a></div></div>
 <div class="ttc" id="classUserInterface_html_ae12398af867ca1707dfe99dec3ad7411"><div class="ttname"><a href="classUserInterface.html#ae12398af867ca1707dfe99dec3ad7411">UserInterface::show_battery</a></div><div class="ttdeci">void show_battery(int x, int y, Battery::battery_status_type status, double charge)</div><div class="ttdef"><b>Definition:</b> <a href="user__interface_8cc_source.html#l00010">user_interface.cc:10</a></div></div>
@@ -171,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 24 2019 03:28:36 for Johnny Five by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 24 2019 05:43:11 for Johnny Five by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

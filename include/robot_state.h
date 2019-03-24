@@ -1,6 +1,8 @@
 #ifndef _ELMA_ROBOTSTATE_H
 #define _ELMA_ROBOTSTATE_H
 #include <iostream>
+#include "json/json.h"
+#include "httplib/httplib.h"
 #include "elma/elma.h"
 
 using namespace elma;
@@ -42,6 +44,10 @@ class RobotPostState : public State {
     void entry(const Event& e) {
         json data;
         data["ALERT"] = _alert_string;
+
+        httplib::Client cli("localhost", 80);
+        auto res = cli.Post("/save", data.dump(), "json");
+        
         std::cout << "entering " + name() << "\n";
     }
 
